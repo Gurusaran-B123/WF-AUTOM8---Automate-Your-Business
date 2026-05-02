@@ -716,7 +716,7 @@ font-size:2rem;
     .nav-links.active {
     display: flex;
     position:absolute;      
-    top: 70px;
+    top:100px;
     left: 0;
     right: 0;
     flex-direction: column;
@@ -812,6 +812,9 @@ flex-direction: column;
 }
 
 @media (max-width: 480px) {
+    .hero{
+        height:90vh;
+    }
      .hero-text{
         margin-top:100px;
     }

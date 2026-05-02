@@ -835,4 +835,8 @@ flex-direction: column;
    
     
 }
+    .cta-buttons{
+flex-direction: column;
+        padding: 0px 50px;
+    }
 }

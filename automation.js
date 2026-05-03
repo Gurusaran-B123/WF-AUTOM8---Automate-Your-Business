@@ -100,37 +100,46 @@ function showFormStatus(message, type) {
     formStatus.style.display = 'block';
 }
 
-const form = document.getElementById("contactForm");
-const formStatus = document.getElementById("formStatus");
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contactForm");
+    const formStatus = document.getElementById("formStatus");
 
-form.addEventListener("submit", async function (e) {
-    e.preventDefault();
-
-    const data = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        message: document.getElementById("message").value,
-        source: "WF AUTOM8 Website"
-    };
-
-    try {
-        const response = await fetch("https://n8n-y3r8.onrender.com/webhook/lead-capture", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        });
-
-        if (response.ok) {
-            formStatus.innerText = "✅ Request sent successfully!";
-            formStatus.className = "form-status success";
-            form.reset();
-        } else {
-            throw new Error("Failed");
-        }
-    } catch (error) {
-        formStatus.innerText = "❌ Error sending request.";
-        formStatus.className = "form-status error";
+    if (!form) {
+        console.error("contactForm not found");
+        return;
     }
+
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const data = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            message: document.getElementById("message").value,
+            source: "WF AUTOM8 Website"
+        };
+
+        try {
+            const response = await fetch("https://n8n-y3r8.onrender.com/webhook/lead-capture", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                formStatus.innerText = "✅ Request sent successfully!";
+                formStatus.className = "form-status success";
+                form.reset();
+            } else {
+                formStatus.innerText = "❌ Webhook error. Check n8n.";
+                formStatus.className = "form-status error";
+            }
+        } catch (error) {
+            console.error(error);
+            formStatus.innerText = "❌ Connection error. Check webhook URL / CORS.";
+            formStatus.className = "form-status error";
+        }
+    });
 });

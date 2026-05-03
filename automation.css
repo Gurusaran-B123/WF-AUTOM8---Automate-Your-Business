@@ -694,3 +694,31 @@ section {
         margin: 0 auto;
     }
 }
+
+.contact-subtext,
+.contact-benefits {
+    color: var(--text-secondary);
+    margin-bottom: 22px;
+}
+
+.contact-benefits p {
+    margin-bottom: 10px;
+}
+
+.gmail {
+    background: #ff0033;
+    color: white;
+}
+
+.gmail:hover {
+    background: #e60029;
+    transform: translateY(-4px);
+}
+
+
+
+
+
+
+
+

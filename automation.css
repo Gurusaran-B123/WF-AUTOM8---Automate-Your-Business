@@ -855,7 +855,12 @@ flex-direction: column;
     box-shadow: 0 10px 30px rgba(255, 0, 51, 0.15);
 }
 
-
+.hero-trust {
+    margin-top: 18px;
+    color: #b0b0b0;
+    font-size: 15px;
+    text-align: center;
+}
 
 
 

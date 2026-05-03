@@ -114,7 +114,7 @@ form.addEventListener("submit", async function (e) {
     };
 
     try {
-        const response = await fetch("https://n8n-y3r8.onrender.com/webhook-test/lead-capture", {
+        const response = await fetch("https://n8n-y3r8.onrender.com/webhook/lead-capture", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

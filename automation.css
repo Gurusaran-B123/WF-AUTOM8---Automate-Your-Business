@@ -715,7 +715,18 @@ section {
     transform: translateY(-4px);
 }
 
+.gmail-btn {
+    background: transparent;
+    border: 2px solid #ff0033;
+    color: #ff0033;
+    font-weight: 600;
+}
 
+.gmail-btn:hover {
+    background: #ff0033;
+    color: white;
+    transform: translateY(-3px);
+}
 
 
 

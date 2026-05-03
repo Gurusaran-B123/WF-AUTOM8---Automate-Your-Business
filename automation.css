@@ -516,6 +516,10 @@ body {
     font-size: 14px;
 }
 
+.client-feedback {
+    margin-bottom: 80px;
+}
+
 /* Contact Section */
 .contact {
     padding: 100px 20px;

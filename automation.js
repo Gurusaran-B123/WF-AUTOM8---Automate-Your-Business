@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             if (response.ok) {
-                showStatus("✅ Lead captured successfully!", "success");
+                showStatus("✅ Request sent successfully!", "success");
                 form.reset();
             } else {
                 showStatus("❌ Webhook error. Check n8n.", "error");
